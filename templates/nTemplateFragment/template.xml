@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<template
+        format="1"
+        revision="1"
+        name="Fragment"
+        description="Creates a new Clean Architecture Fragment">
+
+    <category value="N Clean Architecture"/>
+
+    <dependency name="android-support-v4" revision="8" />
+
+    <formfactor value="Mobile"/>
+
+    <parameter
+            id="mvpName"
+            name="Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="main"
+            help="The name of the class to create"/>
+
+    <parameter
+            id="className"
+            name="Fragment Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            suggest="${underscoreToCamelCase(classToResource(mvpName))}Fragment"
+            help="The name of the activity class to create"/>
+
+    <parameter
+            id="layoutName"
+            name="Layout Name"
+            type="string"
+            constraints="layout|unique|nonempty"
+            suggest="fragment_${classToResource(className)}"
+            default="fragment_main"
+            help="The name of the layout to create for the activity"/>
+
+    <parameter
+            id="packageName"
+            name="Package name"
+            type="string"
+            constraints="package"
+            default="com.mycompany.myapp"/>
+
+    <parameter
+            id="contractName"
+            name="Contract Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            suggest="${underscoreToCamelCase(classToResource(mvpName))}Contract"
+            help="The name of the Contract class to create"/>
+            
+    <parameter
+            id="viewClass"
+            name="View Name"
+            type="string"
+            constraints="class|nonempty|unique"
+            default="MainView"
+            suggest="${underscoreToCamelCase(classToResource(className))}View"
+            help="The name of the View to create"/>
+
+    <parameter
+            id="presenterClass"
+            name="Presenter Name"
+            type="string"
+            constraints="class|nonempty|unique"
+            default="MainPresenter"
+            suggest="${underscoreToCamelCase(classToResource(className))}Presenter"
+            help="The name of the Presenter to create"/>
+
+    <parameter
+        id="shouldGenerateDagger"
+        name="Generate Dagger 2 files"
+        type="boolean"
+        default="false"
+        help="Generate component and module for these MVP structure"/>
+
+    <parameter
+            id="componentClass"
+            name="Component Name"
+            type="string"
+            constraints="class|nonempty|unique"
+            default="MainComponent"
+            suggest="${underscoreToCamelCase(viewClass)}Component"
+            help="The name of the Component to create"/>
+
+    <parameter
+            id="moduleClass"
+            name="Module Name"
+            type="string"
+            constraints="class|nonempty|unique"
+            default="MainModule"
+            suggest="${underscoreToCamelCase(viewClass)}Module"
+            help="The name of the Module to create"/>
+
+
+
+    <globals file="globals.xml.ftl"/>
+    <execute file="recipe.xml.ftl"/>
+
+</template>
