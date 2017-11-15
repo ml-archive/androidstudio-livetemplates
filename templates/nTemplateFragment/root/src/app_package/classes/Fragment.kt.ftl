@@ -14,7 +14,7 @@ class ${className} : BaseFragment<${contractName}.${viewClass}>(), ${contractNam
     lateinit var presenter: ${presenterClass}
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.${layoutName}, container, false)
+        return inflater?.inflate(R.layout.${layoutName}, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -26,8 +26,8 @@ class ${className} : BaseFragment<${contractName}.${viewClass}>(), ${contractNam
     override fun setupTranslations() {
         //Add your nStack Translations here
     }
-
     override fun injectDependencies() {
+<#if shouldGenerateDagger>
         val appComponent = (activity.application as App).appComponent
 
         Dagger${componentClass}.builder()
@@ -35,5 +35,6 @@ class ${className} : BaseFragment<${contractName}.${viewClass}>(), ${contractNam
                 .${moduleClass?uncap_first}(${moduleClass}())
                 .build()
                 .inject(this)
+</#if>
     }
 }

@@ -6,6 +6,7 @@
     <global id="excludeMenu" type="boolean" value="true" />
     <global id="generateActivityTitle" type="boolean" value="false" />
     <global id="mvpPackageName" type="string" value="${mvpName?lower_case}"/>
+    <global id="shouldGenerateDagger" type="boolean" value="false" />
 
     <#include "../common/common_globals.xml.ftl" />
 </globals>

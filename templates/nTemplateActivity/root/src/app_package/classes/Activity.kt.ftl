@@ -22,7 +22,9 @@ class ${activityClass} : BaseActivity<${contractName}.${viewClass}>(), ${contrac
         //Add your nStack Translations here
     }
 
+
     override fun injectDependencies() {
+<#if shouldGenerateDagger>
         val appComponent = (application as App).appComponent
 
         Dagger${componentClass}.builder()
@@ -30,5 +32,7 @@ class ${activityClass} : BaseActivity<${contractName}.${viewClass}>(), ${contrac
                 .${moduleClass?uncap_first}(${moduleClass}())
                 .build()
                 .inject(this)
+</#if>
     }
+
 }
