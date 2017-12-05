@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ${applicationPackage}.R
-import ${applicationPackage}.App
 import dk.nodes.arch.presentation.base.BaseFragment
 import javax.inject.Inject
 
-class ${className} : BaseFragment<${contractName}.${viewClass}>(), ${contractName}.${viewClass} {
+class ${className} : BaseFragment(), ${contractName}.${viewClass} {
     @Inject
     lateinit var presenter: ${presenterClass}
 
@@ -20,7 +18,7 @@ class ${className} : BaseFragment<${contractName}.${viewClass}>(), ${contractNam
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        presenter.onViewAttached(this, lifecycle)
+        presenter.onViewCreated(this, lifecycle)
     }
     
     override fun setupTranslations() {

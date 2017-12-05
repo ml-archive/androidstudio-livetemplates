@@ -1,12 +1,9 @@
 package ${escapeKotlinIdentifiers(packageName)}.${mvpPackageName}
 
 import android.os.Bundle
-import ${applicationPackage}.R
-import ${applicationPackage}.App
-import dk.nodes.arch.presentation.base.BaseActivity
 import javax.inject.Inject
 
-class ${activityClass} : BaseActivity<${contractName}.${viewClass}>(), ${contractName}.${viewClass} {
+class ${activityClass} : BaseActivity(), ${contractName}.${viewClass} {
     @Inject
     lateinit var presenter: ${presenterClass}
 
@@ -15,7 +12,7 @@ class ${activityClass} : BaseActivity<${contractName}.${viewClass}>(), ${contrac
 
         setContentView(R.layout.${layoutName})
 
-        presenter.onViewAttached(this, lifecycle)
+        presenter.onViewCreated(this, lifecycle)
     }
 
     override fun setupTranslations() {
