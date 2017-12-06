@@ -4,9 +4,9 @@ For adding Nodes specific interactors/fragments/activities
 
 ## 🔧 Installation
 #### MacOS
-Run the install.sh bash script inside the project
+Run the install.sh script inside the `templates` folder
 #### Windows
-Copy the folders into the following path
+Copy all the folders inside the `template` folder into the following path
 `C:\Android\android-studio\plugins\android\lib\templates\`
 
 ## Usage
