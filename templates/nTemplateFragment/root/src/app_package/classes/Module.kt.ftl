@@ -8,7 +8,7 @@ import dk.nodes.arch.domain.injection.scopes.FragmentScope
 class ${moduleClass} {
     @Provides
     @FragmentScope
-    fun providesPresenter(): ${contractName}.${presenterClass} {
+    fun providesPresenter(): ${contractName}.Presenter {
         return ${presenterClass}()
     }
 }
