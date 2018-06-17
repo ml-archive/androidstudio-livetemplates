@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class ${className} : BaseFragment(), ${contractName}.View {
     @Inject
-    lateinit var presenter: ${presenterClass}
+    lateinit var presenter: ${contractName}.Presenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.${layoutName}, container, false)
@@ -21,14 +21,5 @@ class ${className} : BaseFragment(), ${contractName}.View {
     }
     
     override fun injectDependencies() {
-<#if shouldGenerateDagger>
-        val appComponent = (activity.application as App).appComponent
-
-        Dagger${componentClass}.builder()
-                .appComponent(appComponent)
-                .${moduleClass?uncap_first}(${moduleClass}())
-                .build()
-                .inject(this)
-</#if>
     }
 }

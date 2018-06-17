@@ -11,12 +11,5 @@
       
     <instantiate from="src/app_package/classes/Presenter.kt.ftl"
       to="${escapeXmlAttribute(srcOut)}/${mvpPackageName}/${presenterClass}.kt" />
-
-    <#if shouldGenerateDagger>
-        <instantiate from="src/app_package/classes/Component.kt.ftl"
-            to="${escapeXmlAttribute(srcOut)}/${mvpPackageName}/${componentClass}.kt" />
-
-        <instantiate from="src/app_package/classes/Module.kt.ftl"
-            to="${escapeXmlAttribute(srcOut)}/${mvpPackageName}/${moduleClass}.kt" />
-    </#if>
+      
 </recipe>

@@ -7,10 +7,10 @@ import dk.nodes.arch.presentation.base.BaseView
 interface ${contractName} {
 
     @UiThread
-    interface ${viewClass}: BaseView{
+    interface View: BaseView{
     }
 
-    interface ${presenterClass}: BasePresenter<${viewClass}>{
+    interface Presenter: BasePresenter<View>{
     }
     
 }

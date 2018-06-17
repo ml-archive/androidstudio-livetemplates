@@ -43,14 +43,6 @@
             default="false"
             help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher"/>
 
-
-    <parameter
-        id="shouldGenerateDagger"
-        name="Generate Dagger 2 files"
-        type="boolean"
-        default="false"
-        help="Generate component and module for these MVP structure"/>
-
     <parameter
             id="packageName"
             name="Package name"
@@ -65,15 +57,6 @@
             constraints="class|unique|nonempty"
             suggest="${underscoreToCamelCase(classToResource(mvpName))}Contract"
             help="The name of the Contract class to create"/>
-            
-    <parameter
-            id="viewClass"
-            name="View Name"
-            type="string"
-            constraints="class|nonempty|unique"
-            default="MainView"
-            suggest="${underscoreToCamelCase(classToResource(activityClass))}View"
-            help="The name of the View to create"/>
 
     <parameter
             id="presenterClass"
@@ -83,24 +66,6 @@
             default="MainPresenter"
             suggest="${underscoreToCamelCase(classToResource(activityClass))}Presenter"
             help="The name of the Presenter to create"/>
-
-    <parameter
-            id="componentClass"
-            name="Component Name"
-            type="string"
-            constraints="class|nonempty|unique"
-            default="MainComponent"
-            suggest="${underscoreToCamelCase(viewClass)}Component"
-            help="The name of the Component to create"/>
-
-    <parameter
-            id="moduleClass"
-            name="Module Name"
-            type="string"
-            constraints="class|nonempty|unique"
-            default="MainModule"
-            suggest="${underscoreToCamelCase(viewClass)}Module"
-            help="The name of the Module to create"/>
 
     <globals file="globals.xml.ftl"/>
     <execute file="recipe.xml.ftl"/>

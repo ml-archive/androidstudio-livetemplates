@@ -3,9 +3,9 @@ package ${escapeKotlinIdentifiers(packageName)}.${mvpPackageName}
 import android.os.Bundle
 import javax.inject.Inject
 
-class ${activityClass} : BaseActivity(), ${contractName}.${viewClass} {
+class ${activityClass} : BaseActivity(), ${contractName}.View {
     @Inject
-    lateinit var presenter: ${presenterClass}
+    lateinit var presenter: ${contractName}.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,17 +19,7 @@ class ${activityClass} : BaseActivity(), ${contractName}.${viewClass} {
         //Add your nStack Translations here
     }
 
-
     override fun injectDependencies() {
-<#if shouldGenerateDagger>
-        val appComponent = (application as App).appComponent
-
-        Dagger${componentClass}.builder()
-                .appComponent(appComponent)
-                .${moduleClass?uncap_first}(${moduleClass}())
-                .build()
-                .inject(this)
-</#if>
     }
 
 }
