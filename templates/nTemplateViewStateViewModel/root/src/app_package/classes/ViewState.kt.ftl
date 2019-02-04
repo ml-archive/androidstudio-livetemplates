@@ -1,9 +1,9 @@
-package ${escapeKotlinIdentifiers(packageName)}.${vmvsName}
+package ${escapeKotlinIdentifiers(packageName)}.${vmvsName?lower_case}
 
 import dk.nodes.template.util.Event
 
 data class ${vsClass}(
-        val posts: List<Any> = emptyList(),
+        val data: Any = Any(),
         val errorMessage: Event<String>? = null,
         val isLoading: Boolean = false
 )

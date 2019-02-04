@@ -12,7 +12,7 @@
 
     <parameter
             id="vmvsName"
-            name="ViewModel + ViewState name (start with lowercase)"
+            name="ViewModel + ViewState name"
             type="string"
             constraints="class|unique|nonempty"
             default=""

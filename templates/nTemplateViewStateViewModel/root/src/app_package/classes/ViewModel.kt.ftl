@@ -1,4 +1,4 @@
-package ${escapeKotlinIdentifiers(packageName)}.${vmvsName}
+package ${escapeKotlinIdentifiers(packageName)}.${vmvsName?lower_case}
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -24,7 +24,7 @@ class ${vmClass} @Inject constructor() : BaseViewModel() {
         when (result) {
             is Result.Success -> _viewState.value = _viewState.value?.copy(
                     isLoading = false,
-                    posts = result.data
+                    data = result.data
             )
             is Result.Error -> _viewState.value = _viewState.value?.copy(
                     isLoading = false,
