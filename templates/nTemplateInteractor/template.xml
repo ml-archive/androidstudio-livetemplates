@@ -7,7 +7,7 @@
         minBuildApi="14"
         description="Creates a new Clean Architecture Interactor">
 
-    <category value="N Clean Architecture"/>
+    <category value="Nodes Arch"/>
     <formfactor value="Mobile"/>
 
     <parameter
@@ -32,7 +32,7 @@
             type="string"
             constraints="package"
             default="com.mycompany.myapp"/>
-            
+
     <execute file="recipe.xml.ftl"/>
 
 </template>

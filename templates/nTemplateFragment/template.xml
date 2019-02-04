@@ -5,7 +5,7 @@
         name="Fragment"
         description="Creates a new Clean Architecture Fragment">
 
-    <category value="N Clean Architecture"/>
+    <category value="Nodes Arch"/>
 
     <dependency name="android-support-v4" revision="8" />
 
