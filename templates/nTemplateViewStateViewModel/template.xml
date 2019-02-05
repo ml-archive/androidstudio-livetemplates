@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<template
+        format="1"
+        revision="1"
+        name="ViewState + ViewModel"
+        minApi="14"
+        minBuildApi="14"
+        description="Creates new ViewModel + ViewState files">
+
+    <category value="Nodes Arch"/>
+    <formfactor value="Mobile"/>
+
+    <parameter
+            id="vmvsName"
+            name="ViewModel + ViewState name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default=""
+            help="The name of the ViewModel and ViewState to be created"/>
+
+    <parameter
+            id="vmClass"
+            name="ViewModel name"
+            type="string"
+            constraints="class|unique|nonempty"
+            suggest="${underscoreToCamelCase(classToResource(vmvsName))}ViewModel"
+            help="The name of the ViewModel to create"/>
+
+    <parameter
+            id="vsClass"
+            name="ViewState name"
+            type="string"
+            constraints="class|unique|nonempty"
+            suggest="${underscoreToCamelCase(classToResource(vmvsName))}ViewState"
+            help="The name of the ViewState to create"/>
+
+    <parameter
+            id="packageName"
+            name="Package name"
+            type="string"
+            constraints="package"
+            default="com.mycompany.myapp"/>
+
+    <execute file="recipe.xml.ftl"/>
+
+</template>

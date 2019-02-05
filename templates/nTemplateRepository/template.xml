@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<template
+        format="1"
+        revision="1"
+        name="Repository"
+        minApi="14"
+        minBuildApi="14"
+        description="Creates a new Repository">
+
+    <category value="Nodes Arch"/>
+    <formfactor value="Mobile"/>
+
+    <parameter
+            id="repositoryName"
+            name="Name"
+            type="string"
+            constraints="unique|nonempty"
+            help="The name of the repository"/>
+
+    <parameter
+            id="repositoryClass"
+            name="Repository name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="Repository"
+            suggest="${underscoreToCamelCase(classToResource(repositoryName))}Repository"
+            help="The name of the repository class to create"/>
+
+     <parameter
+            id="repositoryType"
+            name="Repository object type"
+            type="string"
+            constraints="class|nonempty"
+            suggest="${underscoreToCamelCase(classToResource(repositoryName))}"
+            help="The type of the object handled by the repository"/>
+
+    <parameter
+            id="packageName"
+            name="Package Path"
+            type="string"
+            constraints="package"
+            default="com.mycompany.myapp"/>
+
+    <execute file="recipe.xml.ftl"/>
+
+</template>
