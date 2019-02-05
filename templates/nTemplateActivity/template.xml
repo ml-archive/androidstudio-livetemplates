@@ -7,7 +7,7 @@
         minBuildApi="14"
         description="Creates a new Clean Architecture activity">
 
-    <category value="N Clean Architecture"/>
+    <category value="Nodes Arch"/>
 
     <formfactor value="Mobile"/>
 

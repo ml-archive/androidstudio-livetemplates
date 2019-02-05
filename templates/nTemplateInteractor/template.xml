@@ -5,9 +5,9 @@
         name="Interactor"
         minApi="7"
         minBuildApi="14"
-        description="Creates a new Clean Architecture Interactor">
+        description="Creates a new Interactor">
 
-    <category value="N Clean Architecture"/>
+    <category value="Nodes Arch"/>
     <formfactor value="Mobile"/>
 
     <parameter
@@ -15,8 +15,8 @@
             name="Name"
             type="string"
             constraints="class|unique|nonempty"
-            default="main"
-            help="The name of the class to create"/>
+            default=""
+            help="The name of the interactor to create"/>
 
     <parameter
             id="interactorClass"
@@ -24,7 +24,15 @@
             type="string"
             constraints="class|unique|nonempty"
             suggest="${underscoreToCamelCase(classToResource(interactorName))}Interactor"
-            help="The name of the interactor to create"/>
+            help="The name of the class to create"/>
+
+    <parameter
+            id="interactorResultType"
+            name="Interactor result type"
+            type="string"
+            default="Any"
+            constraints="nonempty"
+            help="The type of the object returned by the repository"/>
 
     <parameter
             id="packageName"
@@ -32,7 +40,7 @@
             type="string"
             constraints="package"
             default="com.mycompany.myapp"/>
-            
+
     <execute file="recipe.xml.ftl"/>
 
 </template>
