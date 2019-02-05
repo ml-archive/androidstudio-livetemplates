@@ -15,7 +15,7 @@
             name="Name"
             type="string"
             constraints="unique|nonempty"
-            help="The name of the class to create starting with lowercase"/>
+            help="The name of the repository"/>
 
     <parameter
             id="repositoryClass"
@@ -24,7 +24,7 @@
             constraints="class|unique|nonempty"
             default="Repository"
             suggest="${underscoreToCamelCase(classToResource(repositoryName))}Repository"
-            help="The name of the repository to create"/>
+            help="The name of the repository class to create"/>
 
      <parameter
             id="repositoryType"

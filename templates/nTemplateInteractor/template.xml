@@ -32,7 +32,7 @@
             type="string"
             default="Any"
             constraints="nonempty"
-            help="The type of the object returned by the repository"/>
+            help="The type of the object returned by the interactor"/>
 
     <parameter
             id="packageName"
