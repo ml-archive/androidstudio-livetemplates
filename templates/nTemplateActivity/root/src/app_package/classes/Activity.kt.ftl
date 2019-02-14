@@ -1,25 +1,17 @@
-package ${escapeKotlinIdentifiers(packageName)}.${mvpPackageName}
+package ${escapeKotlinIdentifiers(packageName)}.${mvvmPackageName}
 
 import android.os.Bundle
 import javax.inject.Inject
 
-class ${activityClass} : BaseActivity(), ${contractName}.View {
-    @Inject
-    lateinit var presenter: ${contractName}.Presenter
+class ${activityClass} : BaseActivity() {
+    private lateinit var viewModel: ${viewModelClass}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.${layoutName})
 
-        presenter.onViewCreated(this, lifecycle)
-    }
-
-    override fun setupTranslations() {
-        //Add your nStack Translations here
-    }
-
-    override fun injectDependencies() {
+        viewModel = bindViewModel()
     }
 
 }

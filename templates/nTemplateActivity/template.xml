@@ -12,7 +12,7 @@
     <formfactor value="Mobile"/>
 
     <parameter
-            id="mvpName"
+            id="mvvmName"
             name="Name"
             type="string"
             constraints="class|unique|nonempty"
@@ -24,7 +24,7 @@
             name="Activity Name"
             type="string"
             constraints="class|unique|nonempty"
-            suggest="${underscoreToCamelCase(classToResource(mvpName))}Activity"
+            suggest="${underscoreToCamelCase(classToResource(mvvmName))}Activity"
             help="The name of the activity class to create"/>
 
     <parameter
@@ -51,21 +51,21 @@
             default="com.mycompany.myapp"/>
 
     <parameter
-            id="contractName"
-            name="Contract Name"
+            id="builderName"
+            name="Builder Name"
             type="string"
             constraints="class|unique|nonempty"
-            suggest="${underscoreToCamelCase(classToResource(mvpName))}Contract"
-            help="The name of the Contract class to create"/>
+            suggest="${underscoreToCamelCase(classToResource(mvvmName))}Builder"
+            help="The name of the Builder class to create"/>
 
     <parameter
-            id="presenterClass"
-            name="Presenter Name"
+            id="viewModelClass"
+            name="ViewModel Name"
             type="string"
             constraints="class|nonempty|unique"
-            default="MainPresenter"
-            suggest="${underscoreToCamelCase(classToResource(activityClass))}Presenter"
-            help="The name of the Presenter to create"/>
+            default="MainViewModel"
+            suggest="${underscoreToCamelCase(classToResource(activityClass))}ViewModel"
+            help="The name of the ViewModel to create"/>
 
     <globals file="globals.xml.ftl"/>
     <execute file="recipe.xml.ftl"/>
